@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
-import ItemCard from "./order/ItemCard";
 import { ChevronLeft, ChevronRight, Heart, Star } from "lucide-react";
 import ItemCarousel from "./order/ItemCarousel";
 import OrderButton from "./order/OrderButton";
 import OtherItem from "./order/OtherItem";
-import ListItem from "./order/listItem";
 import About from "./order/About";
 import Contact from "./order/Contact";
 import Portofolio from "./order/Portofolio";
@@ -56,18 +54,9 @@ function Order() {
     "Perawatan dan pembersihan alat-alat rumah tangga (seperti mesin cuci, kulkas, dan peralatan lainnya)",
   ];
 
-  const whyChoseus = [
-    "Pengalaman lebih dari 10 tahun dalam servis perabotan rumah tangga",
-    "Layanan cepat dan profesional",
-    "Harga yang kompetitif dan transparan",
-    "Komitmen terhadap kualitas dan kepuasan pelanggan",
-  ];
+  const whyChoseus = ["Pengalaman lebih dari 10 tahun dalam servis perabotan rumah tangga", "Layanan cepat dan profesional", "Harga yang kompetitif dan transparan", "Komitmen terhadap kualitas dan kepuasan pelanggan"];
 
-  const otherService = [
-    "Konsultasi desain dan penataan interior rumah",
-    "Penanganan perabotan dengan material khusus (kayu, rotan, plastik, dll.)",
-    "Pembersihan dan pemeliharaan alat dapur dan furnitur outdoor",
-  ];
+  const otherService = ["Konsultasi desain dan penataan interior rumah", "Penanganan perabotan dengan material khusus (kayu, rotan, plastik, dll.)", "Pembersihan dan pemeliharaan alat dapur dan furnitur outdoor"];
 
   return (
     <div className="mt-4 mx-[109px] lg:mx-[109px] sm:mx-[40px] md:mx-[50]">
@@ -88,15 +77,10 @@ function Order() {
         </div>
 
         <div className="">
-          <p>
-            Layanan perbaikan untuk perabotan rumah tangga, seperti perbaikan
-            kecil pada perabotan atau pemasangan perabotan sederhana.
-          </p>
+          <p>Layanan perbaikan untuk perabotan rumah tangga, seperti perbaikan kecil pada perabotan atau pemasangan perabotan sederhana.</p>
           <div className="w-full h-[0px] border border-black mt-[25px] mb-[15px]"></div>
           <p className="text-[#696969] text-[11px] font-normal">MULAI DARI</p>
-          <p className="w-[391.62px] text-black text-[21px] font-semibold font-['Libre Franklin'] leading-[21px]">
-            Rp 500.000
-          </p>
+          <p className="w-[391.62px] text-black text-[21px] font-semibold font-['Libre Franklin'] leading-[21px]">Rp 500.000</p>
           <div className="w-[391.62px] text-black text-[11px] font-normal font-['Libre Franklin'] leading-[21px] mt-[19px]">
             ✔️ Analisis kerusakan perabotan
             <br />
@@ -114,12 +98,8 @@ function Order() {
                 <img src="/icon-delivery.png" alt="" />
               </div>
               <div className="flex-col justify-start items-start gap-2 inline-flex">
-                <div className="text-black text-[15px] font-medium font-['Libre Franklin'] leading-normal">
-                  Gratis Biaya Transportasi
-                </div>
-                <div className="text-black text-[11px] font-medium font-['Libre Franklin'] underline leading-[18px]">
-                  Khusus untuk jangkauan {"<"} 10 km dari kami
-                </div>
+                <div className="text-black text-[15px] font-medium font-['Libre Franklin'] leading-normal">Gratis Biaya Transportasi</div>
+                <div className="text-black text-[11px] font-medium font-['Libre Franklin'] underline leading-[18px]">Khusus untuk jangkauan {"<"} 10 km dari kami</div>
               </div>
             </div>
             <div className="left-[16px] top-[106px] absolute justify-start items-center gap-4 inline-flex">
@@ -127,27 +107,17 @@ function Order() {
                 <img src="/Icon-return.png" alt="" />
               </div>
               <div className="flex-col justify-start items-start gap-2 inline-flex">
-                <div className="text-black text-[15px] font-medium font-['Libre Franklin'] leading-normal">
-                  Gratis Perawatan Secara Berkala
-                </div>
+                <div className="text-black text-[15px] font-medium font-['Libre Franklin'] leading-normal">Gratis Perawatan Secara Berkala</div>
                 <div>
-                  <span className="text-black text-[11px] font-medium font-['Libre Franklin'] leading-[18px]">
-                    Peralatanmu akan kami tinjau 30 hari sekali.{" "}
-                  </span>
-                  <span className="text-black text-[11px] font-medium font-['Libre Franklin'] underline leading-[18px]">
-                    Detail
-                  </span>
+                  <span className="text-black text-[11px] font-medium font-['Libre Franklin'] leading-[18px]">Peralatanmu akan kami tinjau 30 hari sekali. </span>
+                  <span className="text-black text-[11px] font-medium font-['Libre Franklin'] underline leading-[18px]">Detail</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <About
-        otherService={otherService}
-        services={services}
-        whyChoseus={whyChoseus}
-      />
+      <About otherService={otherService} services={services} whyChoseus={whyChoseus} />
       <h1 className="font-bold text-black mb-[33px]">Kenali joko</h1>
       <div className="flex gap-x-[50px] mb-[66px]">
         <img
@@ -157,23 +127,17 @@ function Order() {
         />
         <div>
           <h4 className="font-bold">Joko Samudro</h4>
-          <p className="text-[#696969]">
-            Tukang Servis Perabotan Rumah Tangga, Pemasangan, dan Perawatan
-          </p>
+          <p className="text-[#696969]">Tukang Servis Perabotan Rumah Tangga, Pemasangan, dan Perawatan</p>
           <div className="flex">
             <Star fill="black" color="black" />
             <p className="font-bold text-black">4.9</p>
             <p className="text-[#696969]">(71)</p>
           </div>
-          <button className="border-2 border-[#444444] w-[154.6px] h-[39.98px] rounded-[26.65px] mt-3">
-            Hubungi Saya
-          </button>
+          <button className="border-2 border-[#444444] w-[154.6px] h-[39.98px] rounded-[26.65px] mt-3">Hubungi Saya</button>
         </div>
       </div>
       <Contact />
-      <h3 className="text-black font-bold mb-6 text-lg sm:text-xl md:text-2xl">
-        Portofolio Saya
-      </h3>
+      <h3 className="text-black font-bold mb-6 text-lg sm:text-xl md:text-2xl">Portofolio Saya</h3>
       <Portofolio />
       <br />
       <h3 className="text-black font-bold mb-[41px] text-[23px]">Ulasan</h3>
@@ -182,16 +146,12 @@ function Order() {
           <Ulasan data={item} />
         </div>
       ))}
-      <button className="rounded-3xl border bg-white px-[68px] py-[14px] mb-[100px] font-['Libre Franklin']">
-        Lihat Semua Ulasan
-      </button>
+      <button className="rounded-3xl border bg-white px-[68px] py-[14px] mb-[100px] font-['Libre Franklin']">Lihat Semua Ulasan</button>
       <div className="flex gap-x-[20px] items-center mb-[32px]">
         <div className="w-[19.37px] h-[38.73px] relative">
           <div className="w-[19.37px] h-[38.73px] left-0 top-0 absolute bg-[#00adf1] rounded-[5px]" />
         </div>
-        <div className="text-neutral-800 text-[23px] font-semibold font-['Libre Franklin'] leading-tight">
-          Layanan Terkait
-        </div>
+        <div className="text-neutral-800 text-[23px] font-semibold font-['Libre Franklin'] leading-tight">Layanan Terkait</div>
       </div>
       {/* layanan terkait */}
 
