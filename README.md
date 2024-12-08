@@ -1,8 +1,25 @@
-# React + Vite
+# ONLYFIX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+OnlyFix adalah platform digital yang menghubungkan pemilik rumah dengan teknisi profesional di seluruh Indonesia. Kami hadir untuk memudahkan pengguna menemukan tenaga ahli berkualitas dalam berbagai bidang, mulai dari perbaikan listrik, pipa ledeng, perawatan peralatan rumah tangga, hingga renovasi. OnlyFix memberikan akses mudah dan terpercaya ke layanan teknisi yang terverifikasi, sehingga Anda dapat memastikan perbaikan dilakukan dengan aman, efisien, dan transparan.
 
-Currently, two official plugins are available:
+## Team Member:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Muhammad Zaidan Azizi (PM)
+- Muhammad Tony Putra (UI/UX)
+- Dimas Rezananda (FE)
+- Edgar Davin Danuarta (FE)
+- Elgin Brian Wahyu Bramadhika (BE)
+
+## Tech Stack
+
+- **Front-end:** `ReactJS, Tailwind CSS, Vercel`
+- **Back-end:** `PHP, Laravel, MySQL, Railway`
+
+## GitHub Repository
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=elginbrian&repo=ONLYFIX-FE&theme=radical)](https://github.com/elginbrian/ONLYFIX-FE)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=elginbrian&repo=ONLYFIX-BE&theme=radical)](https://github.com/elginbrian/ONLYFIX-BE)
+
+## Deployment URL
+
+`https://onlyfix.vercel.app/`
