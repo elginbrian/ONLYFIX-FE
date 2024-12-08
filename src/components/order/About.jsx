@@ -11,11 +11,11 @@ function About({ services, otherService, whyChoseus }) {
       </p>
       <h5 className="font-bold text-black mt-[30px]">Layanan yang kami tawarkan</h5>
 
-      <ListItem items={services} />
+      {/* <ListItem items={services} />
       <h5 className="font-bold text-black">Kami juga menyediakan jasa tambahan seperti:</h5>
       <ListItem items={otherService} />
       <h5 className="font-bold text-black">Kenapa Memilih Kami:</h5>
-      <ListItem items={whyChoseus} />
+      <ListItem items={whyChoseus} /> */}
       <br />
       <p className="text-[#444444]">Hubungi saya terlebih dahulu sebelum memesan. Saya ingin mendengar kebutuhan Anda dan memberikan solusi yang tepat!</p>
     </div>

@@ -1,20 +1,12 @@
 import React from "react";
-import { Star, StarHalf } from "lucide-react"; // Import lucide-react icons
+import { Star, StarHalf } from "lucide-react";
 
 function LayananTerkait({ image }) {
   return (
     <div className="max-w-[261px] w-full sm:max-w-[261px] sm:w-80%">
-      <img
-        className="h-[181.09px] rounded-[18px]"
-        src={image}
-        alt="Layanan Terkait"
-      />
-      <p className="text-black text-base font-medium font-['Libre Franklin'] leading-normal mt-[20px]">
-        Saya bisa benerin saluran laptop
-      </p>
-      <p className="text-[#0682b3] text-base font-medium font-['Libre Franklin'] leading-normal mt-2">
-        Rp 280.000
-      </p>
+      <img className="h-[181.09px] rounded-[18px]" src={image} alt="Layanan Terkait" />
+      <p className="text-black text-base font-medium font-['Libre Franklin'] leading-normal mt-[20px]">Saya bisa benerin saluran laptop</p>
+      <p className="text-[#0682b3] text-base font-medium font-['Libre Franklin'] leading-normal mt-2">Rp 280.000</p>
       {/* Menambahkan 5 bintang dengan 1 bintang setengah */}
       <div className="flex gap-1 mt-2">
         <Star color="#fecb4b" fill="#fecb4b" />
@@ -22,9 +14,7 @@ function LayananTerkait({ image }) {
         <Star color="#fecb4b" fill="#fecb4b" />
         <Star color="#fecb4b" fill="#fecb4b" />
         <StarHalf color="#fecb4b" fill="#fecb4b" />
-        <p className="opacity-50 text-black text-sm font-semibold font-['Libre Franklin'] leading-tight">
-          (65)
-        </p>
+        <p className="opacity-50 text-black text-sm font-semibold font-['Libre Franklin'] leading-tight">(65)</p>
       </div>
       <div className="flex mt-[21px] gap-2 items-center">
         <img
