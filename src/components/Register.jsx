@@ -15,17 +15,13 @@ function Register() {
             <br />
             datang!
           </div>
-          <div className="text-white text-[23px] font-normal font-libre leading-[80.92px] text-start  ml-16">
-            Kelengkapan akunnya dimasukin dulu.
-          </div>
+          <div className="text-white text-[23px] font-normal font-libre leading-[80.92px] text-start  ml-16">Kelengkapan akunnya dimasukin dulu.</div>
           <img src="/icon_white.png" className="ml-16 mt-[168px]" alt="" />
         </div>
 
         {/* Bagian yang tampil di semua ukuran layar (responsif) */}
         <div className="text-start w-[80%] lg:w-[523px] md:mx-[20px] md:w-[80%] sm:w-[80%]">
-          <h1 className="text-black font-medium text-[40px] font-['Libre Franklin']">
-            Daftar
-          </h1>
+          <h1 className="text-black font-medium text-[40px] font-['Libre Franklin']">Daftar</h1>
           <p>
             Udah punya akun ya? sini tinggal{" "}
             <span className="underline">
@@ -34,27 +30,14 @@ function Register() {
             .
           </p>
           <div className="mb-[35px] mt-[28px]">
-            <Input
-              label={"Nama Lengkap"}
-              placeholder={"Masukan Nama"}
-              Icon={<img src="/user.png" className="h-6 w-auto" />}
-            />
+            <Input label={"Nama Lengkap"} placeholder={"Masukan Nama"} Icon={<img src="/user.png" className="h-6 w-auto" />} />
           </div>
 
           <div className="mb-[35px]">
-            <Input
-              label={"E-Mail"}
-              placeholder={"Masukan E-Mail"}
-              Icon={<img src="/email.png" className="h-6 w-auto" />}
-            />
+            <Input label={"E-Mail"} placeholder={"Masukan E-Mail"} Icon={<img src="/email.png" className="h-6 w-auto" />} />
           </div>
           <div className="mb-[35px]">
-            <Input
-              label={"Password"}
-              isPassword={true}
-              placeholder={"Masukan Password"}
-              Icon={<img src="/password.png" className="h-6 w-auto" />}
-            />
+            <Input label={"Password"} isPassword={true} placeholder={"Masukan Password"} Icon={<img src="/password.png" className="h-6 w-auto" />} />
           </div>
           <div className="flex items-center">
             <input type="checkbox" id="saveInfo" className="peer hidden" />
@@ -64,19 +47,13 @@ function Register() {
             >
               ✓
             </label>
-            <span className="ml-3 text-gray-700 text-sm font-medium cursor-pointer">
-              Ingat Saya
-            </span>
+            <span className="ml-3 text-gray-700 text-sm font-medium cursor-pointer">Ingat Saya</span>
           </div>
           <button className="w-full bg-[#00adf1] py-4 px-3 rounded-[47px] mt-5 text-white text-center">
-            <div className=" text-center text-white text-xl font-bold font-['Libre Franklin'] w-full">
-              daftar
-            </div>
+            <div className=" text-center text-white text-xl font-bold font-['Libre Franklin'] w-full">daftar</div>
           </button>
           <div className="w-full lg:w-[521.78px] text-justify text-black/40 text-[15px] font-medium font-['Libre Franklin'] leading-tight mt-20">
-            Dengan bergabung, Anda setuju dengan Persyaratan Layanan OnlyFix.
-            Silahkan membaca Kebijakan Privasi untuk mengetahui bagaimana cara
-            kami mengolah data pribadi Anda.
+            Dengan bergabung, Anda setuju dengan Persyaratan Layanan OnlyFix. Silahkan membaca Kebijakan Privasi untuk mengetahui bagaimana cara kami mengolah data pribadi Anda.
           </div>
         </div>
       </div>
