@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import "./index.css";
@@ -13,6 +8,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Order from "./components/Order";
 import Payment from "./components/Payment";
+import UserPageTest from "./components/UserTest";
 
 const AppLayout = ({ children }) => {
   const location = useLocation();
@@ -36,11 +32,9 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/order" element={<Order />} />
           <Route path="/payment" element={<Payment />} />
-          <Route
-            path="/*"
-            element={<div className="text-center">Halaman Not Found</div>}
-          />
-      </Routes>
+          <Route path="/user-test" element={<UserPageTest />} />
+          <Route path="/*" element={<div className="text-center">Halaman Not Found</div>} />
+        </Routes>
       </AppLayout>
     </Router>
   );
