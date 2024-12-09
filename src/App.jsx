@@ -8,7 +8,6 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Order from "./components/Order";
 import Payment from "./components/Payment";
-import UserPageTest from "./components/UserTest";
 
 const AppLayout = ({ children }) => {
   const location = useLocation();
@@ -32,7 +31,6 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/order" element={<Order />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/user-test" element={<UserPageTest />} />
           <Route path="/*" element={<div className="text-center">Halaman Not Found</div>} />
         </Routes>
       </AppLayout>

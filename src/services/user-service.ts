@@ -1,31 +1,47 @@
-import api from "./api-config"; // Axios instance
 import { GetAllUsersResponse, User } from "../types/user-type";
+import api from "./api-config";
 
-const userService = {
-  getAllUsers: async (): Promise<GetAllUsersResponse> => {
-    const response = await api.get<GetAllUsersResponse>("/users");
-    return response.data;
-  },
-
-  getUserById: async (userId: number): Promise<{ message: string; data: User }> => {
-    const response = await api.get<{ message: string; data: User }>(`/users/${userId}`);
-    return response.data;
-  },
-
-  createUser: async (userData: { username: string; email: string; password: string }): Promise<{ message: string; data: User }> => {
-    const response = await api.post<{ message: string; data: User }>("/users", userData);
-    return response.data;
-  },
-
-  updateUser: async (userId: number, userData: Partial<{ username: string; email: string; password?: string }>): Promise<{ message: string; data: User }> => {
-    const response = await api.put<{ message: string; data: User }>(`/users/${userId}`, userData);
-    return response.data;
-  },
-
-  deleteUser: async (userId: number): Promise<{ message: string }> => {
-    const response = await api.delete<{ message: string }>(`/users/${userId}`);
-    return response.data;
-  },
+export const getAllUsers = async (): Promise<User[]> => {
+  try {
+    const response = await api.get("/users");
+    return response.data || [];
+  } catch (error) {
+    throw new Error("Failed to fetch users.");
+  }
 };
 
-export default userService;
+export const getUserById = async (userId: number): Promise<User> => {
+  try {
+    const response = await api.get(`/users/${userId}`);
+    return response.data || {};
+  } catch (error) {
+    throw new Error(`Failed to fetch user with ID ${userId}.`);
+  }
+};
+
+export const createUser = async (userData: { username: string; email: string; password: string }): Promise<User> => {
+  try {
+    const response = await api.post("/users", userData);
+    return response.data || {};
+  } catch (error) {
+    throw new Error("Failed to create user.");
+  }
+};
+
+export const updateUser = async (userId: number, userData: Partial<{ username: string; email: string; password?: string }>): Promise<User> => {
+  try {
+    const response = await api.put(`/users/${userId}`, userData);
+    return response.data || {};
+  } catch (error) {
+    throw new Error(`Failed to update user with ID ${userId}.`);
+  }
+};
+
+export const deleteUser = async (userId: number): Promise<{ message: string }> => {
+  try {
+    const response = await api.delete(`/users/${userId}`);
+    return response.data || { message: "User deleted successfully" };
+  } catch (error) {
+    throw new Error(`Failed to delete user with ID ${userId}.`);
+  }
+};
