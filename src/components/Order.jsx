@@ -142,7 +142,7 @@ function Order() {
       <br />
       <h3 className="text-black font-bold mb-[41px] text-[23px]">Ulasan</h3>
       {ulasans.map((item, index) => (
-        <div className="mb-[40px]">
+        <div key={index} className="mb-[40px]">
           <Ulasan data={item} />
         </div>
       ))}
