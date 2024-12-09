@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Gardenia";
+  src: url("/fonts/Gardenia-Reguler.ttf") format("truetype");
+}
+
+/* 
+* {
+  font-family: "Libre Franklin", sans-serif;
+} */
+
+/* .navbar {
+  font-family: "Gardenia" !important;
+} */
+
+*::-webkit-scrollbar {
+  display: none;
+}
