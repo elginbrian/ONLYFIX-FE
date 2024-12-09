@@ -19,4 +19,6 @@ const ItemCard = React.memo(({ image, title, description }) => {
   );
 });
 
+ItemCard.displayName = "ItemCard";
+
 export default ItemCard;
