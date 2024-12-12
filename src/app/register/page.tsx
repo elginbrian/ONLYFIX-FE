@@ -8,7 +8,7 @@ import { registerUser } from "@/services/auth-service";
 import { RegisterData } from "@/types/auth-type";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState<RegisterData>({

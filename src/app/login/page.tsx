@@ -6,7 +6,7 @@ import Navbar from "@/components/common/Navbar";
 import { toast, ToastContainer } from "react-toastify";
 import { loginUser } from "@/services/auth-service";
 import "react-toastify/dist/ReactToastify.css";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
