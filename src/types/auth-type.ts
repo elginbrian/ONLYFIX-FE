@@ -10,16 +10,17 @@ export interface RegisterData {
   password_confirmation: string;
 }
 
+interface userPayload {
+  user_id: number;
+  username: string;
+  email: string;
+  account_type: "technician" | "superadmin" | "customer";
+  created_at: string | "not-found";
+  updated_at: string | "not-found";
+}
+
 export interface AuthResponse {
   message: string;
-  user?: {
-    user_id: number;
-    username: string;
-    email: string;
-    account_type: "technician" | "superadmin" | "customer";
-    email_verified_at: string | null;
-    created_at: string | null;
-    updated_at: string | null;
-    api_token: string | null;
-  };
+  user?: userPayload | null;
+  api_token: string | "not-found";
 }

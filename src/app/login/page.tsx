@@ -6,10 +6,12 @@ import Navbar from "@/components/common/Navbar";
 import { toast, ToastContainer } from "react-toastify";
 import { loginUser } from "@/services/auth-service";
 import "react-toastify/dist/ReactToastify.css";
+import { Router, useRouter } from "next/router";
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -23,7 +25,7 @@ const Login: React.FC = () => {
     e.preventDefault();
 
     if (!formData.email || !formData.password) {
-      toast.error("Please fill in all fields.");
+      toast.warning("Please fill in all fields.");
       return;
     }
 
@@ -32,6 +34,7 @@ const Login: React.FC = () => {
     try {
       const response = await loginUser(formData);
       toast.success("Login successful!");
+      router.push("/");
     } catch (err: any) {
       toast.error(err.message || "An error occurred during login.");
     } finally {

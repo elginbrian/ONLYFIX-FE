@@ -8,6 +8,7 @@ import { registerUser } from "@/services/auth-service";
 import { RegisterData } from "@/types/auth-type";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/router";
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState<RegisterData>({
@@ -18,8 +19,8 @@ const Register: React.FC = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
@@ -31,9 +32,8 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validations
     if (!formData.username || !formData.email || !formData.password || !formData.password_confirmation) {
-      toast.error("Please fill in all fields.");
+      toast.warning("Please fill in all fields.");
       return;
     }
 
@@ -48,6 +48,7 @@ const Register: React.FC = () => {
       const response = await registerUser(formData);
       toast.success("Registration successful! You can now log in.");
       setFormData({ username: "", email: "", password: "", password_confirmation: "" });
+      router.push("/login");
     } catch (err: any) {
       toast.error(err.message || "An error occurred during registration.");
     } finally {

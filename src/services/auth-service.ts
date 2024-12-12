@@ -4,17 +4,13 @@ import { handleRequest } from "./handler";
 
 export const registerUser = async (data: RegisterData): Promise<AuthResponse> => {
   const request = api.post<AuthResponse>("/register", data);
-  return handleRequest(request);
+  const response = await handleRequest(request);
+  return response;
 };
 
 export const loginUser = async (data: LoginData): Promise<AuthResponse> => {
   const request = api.post<AuthResponse>("/login", data);
   const response = await handleRequest(request);
-
-  if (response.user?.api_token) {
-    localStorage.setItem("token", response.user.api_token);
-  }
-
   return response;
 };
 
