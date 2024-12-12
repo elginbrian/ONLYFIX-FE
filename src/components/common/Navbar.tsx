@@ -8,35 +8,37 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="border-b border-b-[#B6B6B6] p-0">
-      <nav className="flex justify-between items-center mx-8 my-6">
+      <nav className="flex justify-between items-center px-8 py-6">
         {/* Logo Section */}
-        <div className="flex gap-3 items-center">
-          <img src="/logo_2.png" alt="Logo Image" className="h-10 w-auto" />
-          <div className="text-center flex items-center">
-            <span
-              className="font-gardenia"
-              style={{
-                color: "#00aef0",
-                opacity: "0.95",
-                fontSize: "24px",
-                fontWeight: "bold",
-              }}
-            >
-              Only
-            </span>
-            <span
-              className="font-gardenia"
-              style={{
-                color: "#7fd7f8",
-                opacity: "0.95",
-                fontSize: "24px",
-                fontWeight: "bold",
-              }}
-            >
-              Fix
-            </span>
+        <Link href="/">
+          <div className="flex gap-3 items-center">
+            <img src="/logo_2.png" alt="Logo Image" className="h-10 w-auto" />
+            <div className="text-center flex items-center">
+              <span
+                className="font-gardenia"
+                style={{
+                  color: "#00aef0",
+                  opacity: "0.95",
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                }}
+              >
+                Only
+              </span>
+              <span
+                className="font-gardenia"
+                style={{
+                  color: "#7fd7f8",
+                  opacity: "0.95",
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                }}
+              >
+                Fix
+              </span>
+            </div>
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-x-6 items-center">
