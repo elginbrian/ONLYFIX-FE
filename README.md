@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![image](https://github.com/user-attachments/assets/683308b2-3e52-47e6-b29e-214d49e7e2dc)
 
-## Getting Started
+# ONLYFIX
 
-First, run the development server:
+OnlyFix adalah platform digital yang menghubungkan pemilik rumah dengan teknisi profesional di seluruh Indonesia. Kami hadir untuk memudahkan pengguna menemukan tenaga ahli berkualitas dalam berbagai bidang, mulai dari perbaikan listrik, pipa ledeng, perawatan peralatan rumah tangga, hingga renovasi. OnlyFix memberikan akses mudah dan terpercaya ke layanan teknisi yang terverifikasi, sehingga Anda dapat memastikan perbaikan dilakukan dengan aman, efisien, dan transparan.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Team Member:
+- Muhammad Zaidan Azizi (PM)
+- Muhammad Tony Putra (UI/UX)
+- Dimas Rezananda (FE)
+- Edgar Davin Danuarta (FE)
+- Elgin Brian Wahyu Bramadhika (BE)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- **Front-end:** `NextJS, Tailwind CSS, Axios`
+- **Back-end:** `PHP, Laravel, MySQL`
+- **Deployment Platform:** `Railway`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## GitHub Repository
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=elginbrian&repo=ONLYFIX-FE&theme=radical)](https://github.com/elginbrian/ONLYFIX-FE)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=elginbrian&repo=ONLYFIX-BE&theme=radical)](https://github.com/elginbrian/ONLYFIX-BE)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Front-end URL
+`https://onlyfix.up.railway.app/`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Back-end API Base URL
+`https://onlyfix-be.up.railway.app/api/v1`
