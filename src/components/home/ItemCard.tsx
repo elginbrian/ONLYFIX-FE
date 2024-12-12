@@ -1,8 +1,8 @@
 import React from "react";
 
 interface ItemCardProps {
-  icon: string; // URL or path to the icon image
-  text: string; // Text content for the card
+  icon: string; 
+  text: string; 
 }
 
 const ItemCard: React.FC<ItemCardProps> = ({ icon, text }) => {

@@ -11,7 +11,6 @@ const Register: React.FC = () => {
       <Navbar />
       <div className="text-center">
         <div className="flex gap-x-[88px] lg:flex-row flex-col">
-          {/* Bagian yang hanya tampil di desktop */}
           <div className="lg:min-w-[712.72px] lg:block hidden h-screen relative bg-[url('/auth_page.png')] flex flex-col items-start">
             <div className="w-[440.36px] text-white text-[85px] font-semibold font-['Libre Franklin'] leading-[80px] mt-[200px] text-start ml-16">
               Selamat
@@ -22,7 +21,6 @@ const Register: React.FC = () => {
             <img src="/icon_white.png" className="ml-16 mt-[168px]" alt="" />
           </div>
 
-          {/* Bagian yang tampil di semua ukuran layar (responsif) */}
           <div className="text-start w-[80%] lg:w-[523px] md:mx-[20px] md:w-[80%] sm:w-[80%] pt-4">
             <h1 className="text-black font-medium text-[40px] font-['Libre Franklin']">Daftar</h1>
             <p>
@@ -53,7 +51,7 @@ const Register: React.FC = () => {
               <span className="ml-3 text-gray-700 text-sm font-medium cursor-pointer">Ingat Saya</span>
             </div>
             <button className="w-full bg-[#00adf1] py-4 px-3 rounded-[47px] mt-5 text-white text-center">
-              <div className=" text-center text-white text-xl font-bold font-['Libre Franklin'] w-full">daftar</div>
+              <div className=" text-center text-white text-xl font-bold font-['Libre Franklin'] w-full">Daftar</div>
             </button>
             <div className="w-full lg:w-[521.78px] text-justify text-black/40 text-[15px] font-medium font-['Libre Franklin'] leading-tight mt-20">
               Dengan bergabung, Anda setuju dengan Persyaratan Layanan OnlyFix. Silahkan membaca Kebijakan Privasi untuk mengetahui bagaimana cara kami mengolah data pribadi Anda.

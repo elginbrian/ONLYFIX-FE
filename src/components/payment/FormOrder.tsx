@@ -1,16 +1,14 @@
 import React from "react";
 import InputPayment from "./InputPayment";
 
-// Define the interface for each input field
 interface InputField {
   label: string;
   placeholder: string;
   mandatory?: boolean;
-  id: string; // id is now required
+  id: string;
 }
 
 function FormOrder() {
-  // Define the fields with the required id
   const fields: InputField[] = [
     { id: "fullName", label: "Nama Lengkap", placeholder: "Masukan Teks", mandatory: true },
     { id: "companyName", label: "Nama Perusahaan", placeholder: "Masukan Teks" },
@@ -26,7 +24,7 @@ function FormOrder() {
       {fields.map((field, index) => (
         <InputPayment key={index} prop={field} />
       ))}
-      {/* Optionally, add a submit button */}
+      {}
       <button className="mt-4 py-2 px-6 rounded-[50px] bg-blue-500 text-white">Submit</button>
     </div>
   );

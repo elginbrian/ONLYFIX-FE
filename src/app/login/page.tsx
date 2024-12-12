@@ -1,7 +1,7 @@
 "use client";
 import { CircleUserRound, Lock, Mail, User } from "lucide-react";
 import React from "react";
-import Link from "next/link"; // Use Next.js Link instead of react-router-dom
+import Link from "next/link"; 
 import Input from "@/components/auth/Input";
 import Navbar from "@/components/common/Navbar";
 
@@ -11,7 +11,7 @@ const Login: React.FC = () => {
       <Navbar />
       <div className="text-center bg-white text-black">
         <div className="flex gap-x-[88px] lg:flex-row flex-col">
-          {/* Bagian yang hanya tampil di desktop */}
+          {}
           <div className="lg:min-w-[712.72px] lg:block hidden h-screen relative bg-[url('/auth_page.png')] flex flex-col items-start">
             <div className="w-[440.36px] text-white text-[85px] font-semibold font-['Libre Franklin'] leading-[80px] mt-[200px] text-start ml-16">
               Ketemu
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
             <img src="/icon_white.png" className="ml-16 mt-[168px]" alt="" />
           </div>
 
-          {/* Bagian yang tampil di semua ukuran layar (responsif) */}
+          {}
           <div className="text-start w-[80%] lg:w-[523px] md:mx-[20px] md:w-[80%] sm:w-[80%] pt-4">
             <h1 className="text-black font-medium text-[40px] font-['Libre Franklin']">Masuk</h1>
             <p>

@@ -4,14 +4,14 @@ import { Eye, EyeOff } from "lucide-react";
 interface InputProps {
   label: string;
   placeholder: string;
-  Icon?: ReactNode; // Optional icon passed as a ReactNode
-  isPassword?: boolean; // Optional flag for password input
+  Icon?: ReactNode; 
+  isPassword?: boolean; 
 }
 
 const Input: React.FC<InputProps> = ({ label, placeholder, Icon, isPassword = false }) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  // Function to toggle password visibility
+  
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -25,13 +25,12 @@ const Input: React.FC<InputProps> = ({ label, placeholder, Icon, isPassword = fa
         <div className="flex items-center gap-3">
           {Icon}
           <input
-            type={isPassword && !showPassword ? "password" : "text"} // Determine input type based on password visibility
+            type={isPassword && !showPassword ? "password" : "text"} 
             placeholder={placeholder}
             className="py-2 pr-3 w-full focus:outline-none bg-transparent"
           />
         </div>
 
-        {/* Add eye icon for toggling password visibility when isPassword is true */}
         {isPassword && (
           <div className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={togglePasswordVisibility}>
             {showPassword ? <EyeOff color="gray" /> : <Eye color="gray" />}

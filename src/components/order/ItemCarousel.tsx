@@ -3,13 +3,12 @@ import React, { useEffect } from "react";
 import ItemCard from "./ItemCard";
 
 function ItemCarousel() {
-  // Explicitly typing the ref to HTMLDivElement
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
   const items = [
-    <ItemCard key="1" imageUrl="https://placehold.co/600x400" title="Title 1" description="Description for item 1" />,
-    <ItemCard key="2" imageUrl="https://placehold.co/600x400" title="Title 2" description="Description for item 2" />,
-    <ItemCard key="3" imageUrl="https://placehold.co/600x400" title="Title 3" description="Description for item 3" />,
+    <ItemCard key="1" imageUrl="/Title_1.jpg" title="" description="" />,
+    <ItemCard key="2" imageUrl="/Title_2.jpg" title="" description="" />,
+    <ItemCard key="3" imageUrl="/Title_3.jpg" title="" description="" />,
   ];
   const infiniteItems = [...items, ...items, ...items];
 
@@ -54,7 +53,7 @@ function ItemCarousel() {
 
   return (
     <div className="relative w-full max-w-[703px] h-[421px] mx-auto">
-      {/* Left Scroll Button */}
+      {}
       <button
         onClick={handleScrollLeft}
         aria-label="Scroll to the left"
@@ -64,7 +63,7 @@ function ItemCarousel() {
         <ChevronLeft />
       </button>
 
-      {/* Carousel Container */}
+      {}
       <div
         className="flex flex-row h-full overflow-x-hidden mx-auto relative md:w-full md:gap-5 sm:gap-5 lg:gap-0"
         ref={scrollContainerRef}
@@ -75,7 +74,7 @@ function ItemCarousel() {
         {infiniteItems}
       </div>
 
-      {/* Right Scroll Button */}
+      {}
       <button
         onClick={handleScrollRight}
         aria-label="Scroll to the right"

@@ -4,7 +4,6 @@ const Footer: React.FC = () => {
   return (
     <div className="w-full bg-[#f7f7f7] px-6 sm:px-10 lg:px-20 py-10 lg:py-20">
       <div className="flex flex-col lg:flex-row justify-between gap-10">
-        {/* Left Section */}
         <div className="flex flex-col">
           <div className="flex gap-3 items-center">
             <img src="/logo_2.png" alt="Logo Image" className="h-10 w-auto" />

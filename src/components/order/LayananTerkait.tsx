@@ -1,12 +1,12 @@
 import React from "react";
-import { Star, StarHalf } from "lucide-react"; // Import lucide-react icons
+import { Star, StarHalf } from "lucide-react"; 
 
 interface LayananTerkaitProps {
   image: string;
   title: string;
   price: string;
-  rating: number; // Rating as a number (e.g., 4.5 for 4 stars and 1 half)
-  reviewsCount: number; // Number of reviews
+  rating: number; 
+  reviewsCount: number; 
   userImage: string;
   userName: string;
 }
@@ -21,7 +21,7 @@ function LayananTerkait({ image, title, price, rating, reviewsCount, userImage, 
       <img className="h-[181.09px] rounded-[18px]" src={image} alt="Layanan Terkait" />
       <p className="text-black text-base font-medium font-['Libre Franklin'] leading-normal mt-[20px]">{title}</p>
       <p className="text-[#0682b3] text-base font-medium font-['Libre Franklin'] leading-normal mt-2">{price}</p>
-      {/* Displaying stars dynamically */}
+      {}
       <div className="flex gap-1 mt-2">
         {Array.from({ length: fullStars }).map((_, index) => (
           <Star key={`full-${index}`} color="#fecb4b" fill="#fecb4b" />

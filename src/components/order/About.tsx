@@ -2,7 +2,6 @@ import React from "react";
 import ListItem from "./ListItem";
 
 interface AboutProps {
-  // services: string[];
   otherService: string[];
   whyChoseus: string[];
 }
@@ -17,8 +16,6 @@ const About: React.FC<AboutProps> = ({ otherService, whyChoseus }) => {
       </p>
 
       <div className="mt-[30px]"></div>
-      {/* <h5 className="font-bold text-black mt-[30px]">Layanan yang kami tawarkan</h5>
-      {services.length > 0 && <ListItem items={services} />} */}
 
       <h5 className="font-bold text-black">Kami juga menyediakan jasa tambahan seperti:</h5>
       {otherService.length > 0 && <ListItem items={otherService} />}

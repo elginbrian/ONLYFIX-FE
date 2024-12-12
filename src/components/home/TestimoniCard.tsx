@@ -24,7 +24,7 @@ const TestimoniCard: React.FC = () => {
           </div>
         </div>
         <div className="w-[323px] left-[32px] top-[90px] absolute text-black text-[17px] font-normal font-['Libre Franklin'] leading-[30px]">
-          “Lorem ipsum dolor sit amet conse ctetur adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.”
+          “Saya sangat puas dengan pelayanan dari OnlyFix! Tukangnya datang tepat waktu dan sangat profesional. AC di rumah saya langsung dingin lagi setelah diperbaiki.”
         </div>
         <div className="left-[32px] top-[234px] absolute text-black text-xl font-bold font-['Libre Franklin'] leading-tight">Marni Sityaningsih</div>
         <div className="left-[32px] top-[266px] absolute text-[#a7a7a7] text-[17px] font-normal font-['Libre Franklin'] leading-[18px]">Ibu Rumah Tangga</div>

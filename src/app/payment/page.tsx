@@ -6,11 +6,10 @@ import FormOrder from "@/components/payment/FormOrder";
 import Navbar from "@/components/common/Navbar";
 
 function Payment() {
-  const [totalPrice, setTotalPrice] = useState(550000); // Initial total value
+  const [totalPrice, setTotalPrice] = useState(550000); 
 
   useEffect(() => {
-    // Add your logic here to dynamically adjust the total price
-    // For example, you might update the totalPrice based on selected items or discounts
+    
   }, [totalPrice]);
 
   return (
@@ -31,7 +30,6 @@ function Payment() {
         <div className="flex gap-[90px] justify-between md:flex-wrap sm:flex-wrap lg:flex-nowrap ">
           <FormOrder />
           <div className="w-[553px] border rounded-lg px-[25px] py-[35px] h-fit">
-            {/* Itemized List */}
             <div className="flex justify-between mb-[30px]">
               <div className="flex gap-2">
                 <img src="/kulkas.png" />
@@ -52,7 +50,6 @@ function Payment() {
               </div>
               <span className="text-black text-base font-normal font-['Libre Franklin'] leading-normal">Rp {totalPrice}</span>
             </div>
-            {/* Other Calculations */}
             <div className="flex justify-between mb-[30px]">
               <div className="flex">
                 <span className="text-black text-base font-medium font-['Libre Franklin'] leading-normal">Pengiriman:</span>
@@ -66,7 +63,6 @@ function Payment() {
               </div>
               <span className="text-black text-base font-normal font-['Libre Franklin'] leading-normal">Rp {totalPrice}</span>
             </div>
-            {/* Payment Method and Buttons */}
             <div className="flex justify-between items-start">
               <div className="flex flex-col items-start space-y-2">
                 <label className="flex items-start space-x-2">

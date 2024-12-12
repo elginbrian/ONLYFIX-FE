@@ -10,7 +10,6 @@ const Ulasan: React.FC<UlasanProps> = ({ data }) => {
   const activeStarColor = "#fecb4b";
   const inactiveStarColor = "gray";
 
-  // Function to get the star color based on rating
   const getStarColor = (index: number): string => {
     return index < data.rating ? activeStarColor : inactiveStarColor;
   };
