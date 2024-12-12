@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import OtherItemProduct from "./OtherItemProduct";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import { ServicesType } from "@/app/order/page";
 
 interface OtherItemProps {
   data: string;
