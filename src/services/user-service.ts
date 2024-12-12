@@ -1,47 +1,33 @@
-import { GetAllUsersResponse, User } from "../types/user-type";
+import { GetAllUsersResponse, User, CreateUserData, UpdateUserData } from "../types/user-type";
 import api from "./api-config";
+import { handleRequest } from "./handler";
 
-export const getAllUsers = async (): Promise<User[]> => {
-  try {
-    const response = await api.get("/users");
-    return response.data || [];
-  } catch (error) {
-    throw new Error("Failed to fetch users.");
-  }
+export const getAllUsers = async (params?: Record<string, string | number>): Promise<User[]> => {
+  const request = api.get<GetAllUsersResponse>("/users", { params });
+  const response = await handleRequest(request);
+  return response.data;
 };
 
 export const getUserById = async (userId: number): Promise<User> => {
-  try {
-    const response = await api.get(`/users/${userId}`);
-    return response.data || {};
-  } catch (error) {
-    throw new Error(`Failed to fetch user with ID ${userId}.`);
-  }
+  const request = api.get<{ data: User }>(`/users/${userId}`);
+  const response = await handleRequest(request);
+  return response.data;
 };
 
-export const createUser = async (userData: { username: string; email: string; password: string }): Promise<User> => {
-  try {
-    const response = await api.post("/users", userData);
-    return response.data || {};
-  } catch (error) {
-    throw new Error("Failed to create user.");
-  }
+export const createUser = async (userData: CreateUserData): Promise<User> => {
+  const request = api.post<{ data: User }>("/users", userData);
+  const response = await handleRequest(request);
+  return response.data;
 };
 
-export const updateUser = async (userId: number, userData: Partial<{ username: string; email: string; password?: string }>): Promise<User> => {
-  try {
-    const response = await api.put(`/users/${userId}`, userData);
-    return response.data || {};
-  } catch (error) {
-    throw new Error(`Failed to update user with ID ${userId}.`);
-  }
+export const updateUser = async (userId: number, userData: UpdateUserData): Promise<User> => {
+  const request = api.put<{ data: User }>(`/users/${userId}`, userData);
+  const response = await handleRequest(request);
+  return response.data;
 };
 
 export const deleteUser = async (userId: number): Promise<{ message: string }> => {
-  try {
-    const response = await api.delete(`/users/${userId}`);
-    return response.data || { message: "User deleted successfully" };
-  } catch (error) {
-    throw new Error(`Failed to delete user with ID ${userId}.`);
-  }
+  const request = api.delete<{ message: string }>(`/users/${userId}`);
+  const response = await handleRequest(request);
+  return response;
 };
