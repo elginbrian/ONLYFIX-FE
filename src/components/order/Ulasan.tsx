@@ -1,6 +1,14 @@
-import { UlasanType } from "@/app/order/page";
 import { Star } from "lucide-react";
 import React from "react";
+
+interface UlasanType {
+  name: string;
+  date: string;
+  image: string;
+  rating: number;
+  title: string;
+  subtitle: string;
+}
 
 interface UlasanProps {
   data: UlasanType;

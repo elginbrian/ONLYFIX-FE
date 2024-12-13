@@ -1,11 +1,47 @@
 "use client";
-import { CircleUserRound, Lock, Mail, User } from "lucide-react";
-import React from "react";
-import Link from "next/link"; 
+import React, { useState } from "react";
+import Link from "next/link";
 import Input from "@/components/auth/Input";
 import Navbar from "@/components/common/Navbar";
+import { toast, ToastContainer } from "react-toastify";
+import { loginUser } from "@/services/auth-service";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 const Login: React.FC = () => {
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.email || !formData.password) {
+      toast.warning("Please fill in all fields.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await loginUser(formData);
+      toast.success("Login successful!");
+      router.push("/");
+    } catch (err: any) {
+      toast.error(err.message || "An error occurred during login.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="bg-white text-black">
       <Navbar />
@@ -33,10 +69,10 @@ const Login: React.FC = () => {
               dulu!.
             </p>
             <div className="mb-[35px] mt-[28px]">
-              <Input label={"E-Mail"} placeholder={"Masukan E-Mail"} Icon={<img src="/email.png" className="h-6 w-auto" />} />
+              <Input label={"E-Mail"} name="email" value={formData.email} onChange={handleChange} placeholder={"Masukan E-Mail"} Icon={<img src="/email.png" className="h-5 w-auto" />} />
             </div>
             <div className="mb-[35px]">
-              <Input isPassword={true} label={"Password"} placeholder={"Masukan Password"} Icon={<img src="/password.png" className="h-6 w-auto" />} />
+              <Input isPassword={true} label={"Password"} name="password" value={formData.password} onChange={handleChange} placeholder={"Masukan Password"} Icon={<img src="/password.png" className="h-6 w-auto" />} />
             </div>
             <div className="flex items-center">
               <input type="checkbox" id="saveInfo" className="peer hidden" />
@@ -49,15 +85,18 @@ const Login: React.FC = () => {
               <span className="ml-3 text-gray-700 text-sm font-medium cursor-pointer">Ingat Saya</span>
             </div>
 
-            <button className="w-full bg-[#00adf1] py-4 px-3 rounded-[47px] mt-5 text-white text-center">
-              <div className=" text-center text-white text-xl font-bold font-['Libre Franklin'] w-full">Masuk</div>
+            <button type="submit" className="w-full bg-[#00adf1] py-4 px-3 rounded-[47px] mt-5 text-white text-center" disabled={loading} onClick={handleSubmit}>
+              <div className="text-center text-white text-xl font-bold font-['Libre Franklin'] w-full">{loading ? "Masuk..." : "Masuk"}</div>
             </button>
+
             <div className="w-full lg:w-[521.78px] text-justify text-black/40 text-[15px] font-medium font-['Libre Franklin'] leading-tight mt-20">
               Dengan bergabung, Anda setuju dengan Persyaratan Layanan OnlyFix. Silahkan membaca Kebijakan Privasi untuk mengetahui bagaimana cara kami mengolah data pribadi Anda.
             </div>
           </div>
         </div>
       </div>
+
+      <ToastContainer />
     </div>
   );
 };
