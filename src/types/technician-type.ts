@@ -1,6 +1,25 @@
-export interface TechniciansResponse {
-  message: string;
+export interface GetAllTechniciansResponse {
   data: Technician[];
+  message?: string;
+}
+
+export interface GetTechnicianByIdResponse {
+  data: Technician;
+  message?: string;
+}
+
+export interface CreateTechnicianResponse {
+  data: Technician;
+  message?: string;
+}
+
+export interface UpdateTechnicianResponse {
+  data: Technician;
+  message?: string;
+}
+
+export interface DeleteTechnicianResponse {
+  message: string;
 }
 
 export interface Technician {

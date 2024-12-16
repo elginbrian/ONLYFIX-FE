@@ -12,6 +12,25 @@ export interface GetAllUsersResponse {
   data: User[];
 }
 
+export interface GetUserByIdResponse {
+  data: User;
+  message?: string;
+}
+
+export interface CreateUserResponse {
+  data: User;
+  message?: string;
+}
+
+export interface UpdateUserResponse {
+  data: User;
+  message?: string;
+}
+
+export interface DeleteUserResponse {
+  message: string;
+}
+
 export interface CreateUserData {
   username: string;
   email: string;

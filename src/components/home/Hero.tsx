@@ -22,6 +22,7 @@ const Hero: React.FC = () => {
         </span>
       </div>
 
+      {/* Search Bar */}
       <div className="w-full sm:w-[626px] h-[66px] px-6 sm:px-9 py-6 bg-white rounded-[40px] flex justify-start items-center gap-2.5 mx-auto mt-6 sm:mt-[33px]">
         <input
           type="text"
@@ -31,27 +32,36 @@ const Hero: React.FC = () => {
           onChange={handleSearchChange}
         />
         <Link href={`/technician/find?query=${encodeURIComponent(searchQuery)}`}>
-          <div className="bg-[#00ADF1] rounded-full p-2 translate-x-4">
+          <div className="bg-[#00ADF1] rounded-full p-2 translate-x-4 hover:scale-110 hover:bg-[#008ec1] transition-transform duration-200">
             <Search color="white" />
           </div>
         </Link>
       </div>
 
+      {/* Item Links with Hover Effect */}
       <div className="mt-10 items-center sm:mt-[90px] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-center gap-4 sm:gap-6 px-4 sm:px-8 lg:px-[268px]">
         <Link href="technician/carpenter">
-          <ItemCard icon="/desk_lamp.png" text="Perabotan" />
+          <div className="hover:scale-105 hover:shadow-lg transition-transform duration-200">
+            <ItemCard icon="/desk_lamp.png" text="Perabotan" />
+          </div>
         </Link>
 
         <Link href="technician/electrician">
-          <ItemCard icon="/listrik.png" text="Kelistrikan" />
+          <div className="hover:scale-105 hover:shadow-lg transition-transform duration-200">
+            <ItemCard icon="/listrik.png" text="Kelistrikan" />
+          </div>
         </Link>
 
         <Link href="technician/builder">
-          <ItemCard icon="/electronic.png" text="Bangunan" />
+          <div className="hover:scale-105 hover:shadow-lg transition-transform duration-200">
+            <ItemCard icon="/electronic.png" text="Bangunan" />
+          </div>
         </Link>
 
         <Link href="technician/plumber">
-          <ItemCard icon="/keran.png" text="Saluran air" />
+          <div className="hover:scale-105 hover:shadow-lg transition-transform duration-200">
+            <ItemCard icon="/keran.png" text="Saluran air" />
+          </div>
         </Link>
       </div>
     </div>

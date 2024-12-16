@@ -19,6 +19,7 @@ const HalamanTeknisi: React.FC = () => {
   useEffect(() => {
     const fetchTechnicians = async () => {
       try {
+        setLoading(true);
         const data = await getAllTechnicians();
         console.log("Data teknisi yang diambil:", data);
         setTechnicians(data);

@@ -64,7 +64,11 @@ const CarpenterPage: React.FC = () => {
           <p className="text-center text-gray-700">Memuat teknisi...</p>
         ) : (
           <div className="flex flex-wrap justify-center gap-6">
-            {technicians && technicians.length > 0 ? technicians.map((technician) => <TechnicianCard key={technician.technician_id} technician={technician} />) : <p className="text-center text-gray-700">Tidak ada teknisi yang tersedia.</p>}
+            {technicians && technicians.length > 0 ? (
+              technicians.filter((technician) => technician.category === "carpenter").map((technician) => <TechnicianCard key={technician.technician_id} technician={technician} />)
+            ) : (
+              <p className="text-center text-gray-700">Tidak ada teknisi yang tersedia.</p>
+            )}
           </div>
         )}
       </div>

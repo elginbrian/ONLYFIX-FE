@@ -24,3 +24,22 @@ export interface AuthResponse {
   user?: userPayload | null;
   api_token: string | "not-found";
 }
+
+export interface RegisterUserResponse {
+  data: AuthResponse;
+  message?: string;
+}
+
+export interface LoginUserResponse {
+  data: AuthResponse;
+  message?: string;
+}
+
+export interface LogoutUserResponse {
+  message: string;
+}
+
+export interface CurrentUserResponse {
+  data: AuthResponse["user"];
+  message?: string;
+}

@@ -1,33 +1,34 @@
-import { Technician, TechniciansResponse } from "@/types/technician-type";
+import { Technician } from "@/types/technician-type";
 import api from "./api-config";
 import { handleRequest } from "./handler";
+import { GetAllTechniciansResponse, GetTechnicianByIdResponse, CreateTechnicianResponse, UpdateTechnicianResponse, DeleteTechnicianResponse } from "@/types/technician-type";
 
-export const getAllTechnicians = async (): Promise<Technician[]> => {
-  const request = api.get<TechniciansResponse>("/technicians");
-  const response = await handleRequest(request);
-  return response.data;
+export const getAllTechnicians = async (): Promise<GetAllTechniciansResponse> => {
+  const request = await api.get<GetAllTechniciansResponse>("/technicians");
+  const response = handleRequest(request);
+  return response;
 };
 
-export const getTechnicianById = async (technicianId: number): Promise<Technician> => {
-  const request = api.get<{ data: Technician }>(`/technicians/${technicianId}`);
-  const response = await handleRequest(request);
-  return response.data;
+export const getTechnicianById = async (technicianId: number): Promise<GetTechnicianByIdResponse> => {
+  const request = await api.get<GetTechnicianByIdResponse>(`/technicians/${technicianId}`);
+  const response = handleRequest(request);
+  return response;
 };
 
-export const createTechnician = async (technicianData: Partial<Technician>): Promise<Technician> => {
-  const request = api.post<{ data: Technician }>("/technicians", technicianData);
-  const response = await handleRequest(request);
-  return response.data;
+export const createTechnician = async (technicianData: Partial<Technician>): Promise<CreateTechnicianResponse> => {
+  const request = await api.post<CreateTechnicianResponse>("/technicians", technicianData);
+  const response = handleRequest(request);
+  return response;
 };
 
-export const updateTechnician = async (technicianId: number, technicianData: Partial<Technician>): Promise<Technician> => {
-  const request = api.put<{ data: Technician }>(`/technicians/${technicianId}`, technicianData);
-  const response = await handleRequest(request);
-  return response.data;
+export const updateTechnician = async (technicianId: number, technicianData: Partial<Technician>): Promise<UpdateTechnicianResponse> => {
+  const request = await api.put<UpdateTechnicianResponse>(`/technicians/${technicianId}`, technicianData);
+  const response = handleRequest(request);
+  return response;
 };
 
-export const deleteTechnician = async (technicianId: number): Promise<{ message: string }> => {
-  const request = api.delete<{ message: string }>(`/technicians/${technicianId}`);
-  const response = await handleRequest(request);
+export const deleteTechnician = async (technicianId: number): Promise<DeleteTechnicianResponse> => {
+  const request = await api.delete<DeleteTechnicianResponse>(`/technicians/${technicianId}`);
+  const response = handleRequest(request);
   return response;
 };

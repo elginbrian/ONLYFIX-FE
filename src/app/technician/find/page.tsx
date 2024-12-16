@@ -6,11 +6,15 @@ import { Technician } from "@/types/technician-type";
 import { TechnicianCard } from "@/components/technician/TechnicianCard";
 import Link from "next/link";
 import { Search } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 const FindPage: React.FC = () => {
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query");
   const [technicians, setTechnicians] = useState<Technician[]>([]);
+  const [filteredTechnicians, setFilteredTechnicians] = useState<Technician[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>(query ? String(query) : "");
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -20,17 +24,27 @@ const FindPage: React.FC = () => {
     const fetchTechnicians = async () => {
       try {
         const data = await getAllTechnicians();
-        console.log("Fetched technicians data:", data);
         setTechnicians(data);
+        setLoading(false);
       } catch (error) {
         console.error("Failed to fetch technicians:", error);
-      } finally {
         setLoading(false);
       }
     };
 
     fetchTechnicians();
   }, []);
+
+  useEffect(() => {
+    if (query && technicians.length > 0) {
+      const lowerCaseQuery = String(query).toLowerCase();
+      setFilteredTechnicians(
+        technicians.filter((technician) => technician.description.toLowerCase().includes(lowerCaseQuery) || technician.category.toLowerCase().includes(lowerCaseQuery) || technician.city.toLowerCase().includes(lowerCaseQuery))
+      );
+    } else {
+      setFilteredTechnicians(technicians);
+    }
+  }, [query, technicians]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-blue-100">
@@ -64,7 +78,11 @@ const FindPage: React.FC = () => {
           <p className="text-center text-gray-700">Memuat teknisi...</p>
         ) : (
           <div className="flex flex-wrap justify-center gap-6">
-            {technicians && technicians.length > 0 ? technicians.map((technician) => <TechnicianCard key={technician.technician_id} technician={technician} />) : <p className="text-center text-gray-700">Tidak ada teknisi yang tersedia.</p>}
+            {filteredTechnicians.length > 0 ? (
+              filteredTechnicians.map((technician) => <TechnicianCard key={technician.technician_id} technician={technician} />)
+            ) : (
+              <p className="text-center text-gray-700">Tidak ada teknisi yang sesuai dengan pencarianmu.</p>
+            )}
           </div>
         )}
       </div>
