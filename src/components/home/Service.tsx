@@ -1,5 +1,6 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
+import Link from "next/link";
 
 const Service: React.FC = () => {
   return (
@@ -15,7 +16,10 @@ const Service: React.FC = () => {
       </div>
 
       <div className="mt-10 mx-auto flex flex-col items-center">
-        <button className="bg-[#00ADF1] px-6 py-3 text-base sm:text-lg rounded-[47.27px] text-white hover:bg-[#007bb3] transition font-semibold">Bergabung</button>
+        <Link href="/register">
+          <button className="bg-[#00ADF1] px-6 py-3 text-base sm:text-lg rounded-[47.27px] text-white hover:bg-[#007bb3] transition font-semibold">Bergabung</button>
+        </Link>
+
         <p className="text-slate-500 text-sm sm:text-base mt-2">Tunggu apa lagi ?</p>
       </div>
     </div>
