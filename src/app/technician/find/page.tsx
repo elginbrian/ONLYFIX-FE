@@ -24,7 +24,7 @@ const FindPage: React.FC = () => {
     const fetchTechnicians = async () => {
       try {
         const data = await getAllTechnicians();
-        setTechnicians(data);
+        setTechnicians(data.data);
         setLoading(false);
       } catch (error) {
         console.error("Failed to fetch technicians:", error);

@@ -31,8 +31,9 @@ export interface RegisterUserResponse {
 }
 
 export interface LoginUserResponse {
-  data: AuthResponse;
+  user: AuthResponse;
   message?: string;
+  api_token?: string | "not-found";
 }
 
 export interface LogoutUserResponse {

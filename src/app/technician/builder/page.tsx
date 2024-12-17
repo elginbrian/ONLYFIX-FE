@@ -21,7 +21,7 @@ const BuilderPage: React.FC = () => {
       try {
         const data = await getAllTechnicians();
         console.log("Fetched technicians data:", data);
-        setTechnicians(data);
+        setTechnicians(data.data);
       } catch (error) {
         console.error("Failed to fetch technicians:", error);
       } finally {

@@ -22,7 +22,7 @@ const HalamanTeknisi: React.FC = () => {
         setLoading(true);
         const data = await getAllTechnicians();
         console.log("Data teknisi yang diambil:", data);
-        setTechnicians(data);
+        setTechnicians(data.data);
       } catch (error) {
         console.error("Gagal mengambil data teknisi:", error);
       } finally {

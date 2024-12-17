@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://onlyfix-be.up.railway.app/api/v1",
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://onlyfix-backend.elginbrian.com/api/v1",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -9,21 +9,9 @@ const api = axios.create({
   },
 });
 
-api.interceptors.request.use(
-  (config) => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("token");
-      if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
-      }
-    }
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
-
 api.interceptors.response.use(
-  (response) => response.data,
+  // (response) => response.data,
+  (response) => response,
   (error) => {
     const { response } = error;
     if (response) {

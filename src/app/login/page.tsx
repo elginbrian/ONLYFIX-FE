@@ -5,8 +5,8 @@ import Input from "@/components/auth/Input";
 import Navbar from "@/components/common/Navbar";
 import { toast, ToastContainer } from "react-toastify";
 import { loginUser } from "@/services/auth-service";
-import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -21,6 +21,13 @@ const Login: React.FC = () => {
     });
   };
 
+  const setCookie = (name: string, value: string, days: number) => {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    const expires = `expires=${date.toUTCString()}`;
+    document.cookie = `${name}=${value};${expires};path=/;Secure`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -33,6 +40,9 @@ const Login: React.FC = () => {
 
     try {
       const response = await loginUser(formData);
+      const token = response.api_token || "not-found";
+
+      setCookie("token", token, 7);
       toast.success("Login successful!");
       router.push("/");
     } catch (err: any) {
@@ -47,7 +57,7 @@ const Login: React.FC = () => {
       <Navbar />
       <div className="text-center bg-white text-black">
         <div className="flex gap-x-[88px] lg:flex-row flex-col">
-          {}
+          {/* Left Section */}
           <div className="lg:min-w-[712.72px] lg:block hidden h-screen relative bg-[url('/auth_page.png')] flex flex-col items-start">
             <div className="w-[440.36px] text-white text-[85px] font-semibold font-['Libre Franklin'] leading-[80px] mt-[200px] text-start ml-16">
               Ketemu
@@ -58,7 +68,7 @@ const Login: React.FC = () => {
             <img src="/icon_white.png" className="ml-16 mt-[168px]" alt="" />
           </div>
 
-          {}
+          {/* Right Section */}
           <div className="text-start w-[80%] lg:w-[523px] md:mx-[20px] md:w-[80%] sm:w-[80%] pt-4">
             <h1 className="text-black font-medium text-[40px] font-['Libre Franklin']">Masuk</h1>
             <p>
