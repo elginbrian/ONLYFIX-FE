@@ -1,6 +1,7 @@
 "use client";
+
 import Navbar from "@/components/common/Navbar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { getAllTechnicians } from "@/services/technician-service";
 import { Technician } from "@/types/technician-type";
 import { TechnicianCard } from "@/components/technician/TechnicianCard";
@@ -8,7 +9,7 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
-const FindPage: React.FC = () => {
+const FindContent: React.FC = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
   const [technicians, setTechnicians] = useState<Technician[]>([]);
@@ -47,17 +48,7 @@ const FindPage: React.FC = () => {
   }, [query, technicians]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-blue-100">
-      <Navbar />
-
-      <div className="mx-4 sm:mx-8 lg:mx-[171px] my-8 sm:my-[55px] bg-[url('/image.png')] bg-cover bg-center bg-no-repeat lg:h-[250px] sm:h-[250px] py-4 px-2 rounded-[20px] sm:rounded-[31px] text-center font-libre flex items-center justify-center">
-        <div className="pt-8 sm:pt-12 md:pt-[10px] px-4">
-          <span className="block text-white text-[18px] sm:text-[22px] md:text-[24px] lg:text-[30px] xl:text-[36px] font-semibold leading-[26px] sm:leading-[32px] md:leading-[36px] lg:leading-[44px] xl:leading-[52px]">
-            Mencarikan <span className="text-[#132663]"> teknisi</span> yang sesuai keinginanmu!
-          </span>
-        </div>
-      </div>
-
+    <>
       <div className="w-full sm:w-[626px] h-[66px] px-6 sm:px-9 py-6 bg-white rounded-[40px] flex justify-start items-center gap-2.5 mx-auto mt-4 sm:mt-[20px] border border-gray-300">
         <input
           type="text"
@@ -86,6 +77,24 @@ const FindPage: React.FC = () => {
           </div>
         )}
       </div>
+    </>
+  );
+};
+
+const FindPage: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-blue-100">
+      <Navbar />
+      <div className="mx-4 sm:mx-8 lg:mx-[171px] my-8 sm:my-[55px] bg-[url('/image.png')] bg-cover bg-center bg-no-repeat lg:h-[250px] sm:h-[250px] py-4 px-2 rounded-[20px] sm:rounded-[31px] text-center font-libre flex items-center justify-center">
+        <div className="pt-8 sm:pt-12 md:pt-[10px] px-4">
+          <span className="block text-white text-[18px] sm:text-[22px] md:text-[24px] lg:text-[30px] xl:text-[36px] font-semibold leading-[26px] sm:leading-[32px] md:leading-[36px] lg:leading-[44px] xl:leading-[52px]">
+            Mencarikan <span className="text-[#132663]"> teknisi</span> yang sesuai keinginanmu!
+          </span>
+        </div>
+      </div>
+      <Suspense fallback={<p className="text-center">Loading...</p>}>
+        <FindContent />
+      </Suspense>
     </div>
   );
 };
